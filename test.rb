@@ -8,11 +8,11 @@ $source = ""
 
 class AtCoder_Test < Test::Unit::TestCase
 
-  def original_test input_str,output_str
+  def original_test source,input_str,output_str
     $stdin = StringIO.new input_str
     $stdout = StringIO.new
 
-    load $source
+    load source
 
     assert_equal(output_str,$stdout.string)
 
@@ -28,6 +28,6 @@ class AtCoder_Test < Test::Unit::TestCase
   # def test_1
   #   input = ""
   #   output = ""
-  #   original_test input,output
+  #   original_test $source,input,output
   # end
 end
