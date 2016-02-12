@@ -9,6 +9,5 @@ calc mi ma n
 
 main = do
   [mi, ma] <- return . fmap read . words =<< getLine
-  n <- return . read =<< getLine
-  li <- replicateM n getLine
-  mapM_ (putStrLn . show . calc mi ma . read) li
+  n <- read <$> getLine
+  mapM_ (putStrLn . show . calc mi ma . read) =<< replicateM n getLine
